@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rock, Paper, Scissors</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="instructions">
+    <h2>Instructions</h2>
+    <p>This is a Rocks, Paper, Scissor game</p>
+    <p>Type either <span class="option">'r'</span>, <span class="option">'p'</span>, or <span class="option">'s'</span> to play!</p>
+  </div>
+  <div class="content-area">
+    <div class="play-area">
+      <p>User Selects: <span class="display" id="user-guess"></span></p>
+      <p>Computer Selects: <span class="display" id="computer-guess"></span></p>
+    </div>
+    <div class="scoreboard">
+      <p>Wins: <span id="winners">0</span></p>
+      <p>Losses: <span id="losers">0</span></p>
+      <p>Ties: <span id="tied">0</span></p>
+    </div>
+  </div>
+  <script type="text/javascript">
+
+
+
+    var computerChoices = ["r", "p", "s"];
+    var computerDisplay = document.getElementById("computer-guess");
+    var userDisplay = document.getElementById("user-guess");
+    var wins = 0;
+    var winsDisplay = document.getElementById("winners");
+    var losses = 0;
+    var lossesDisplay = document.getElementById("losers");
+    var ties = 0;
+    var tiesDisplay = document.getElementById("tied");
+
+
+    // This function initiates each iteration of the game
+    document.onkeyup = function(event) {
+
+      // Determines which key was pressed.
+      var userGuess = event.key;
+      
+      // Randomly chooses a choice from the options array. This is the Computer's guess.
+      var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+      
+      //doesn't move foward with the game unless user selects r, p, or s
+      if(userGuess !== "r" && userGuess !== "p" && userGuess !== "s"){
+        alert("Please select 'r', 'p', or 's'!")
+      }else{
+        
+        //displays both players' selection
+        computerDisplay.textContent = computerGuess;
+        userDisplay.textContent = userGuess;
+
+        //determine who wins
+        if(userGuess === computerGuess){
+          ties++;
+        }else if(userGuess === "r"){
+          if(computerGuess === "p"){
+            losses++;
+          }else{
+            wins++;
+          };
+        }else if(userGuess === "p"){
+          if(computerGuess === "r"){
+            wins++;
+          }else{
+            losses++;
+          };
+        }else if(userGuess === "s"){
+          if(computerGuess === "p"){
+            wins++;
+          }else{
+            losses++;
+          };
+        }
+      }
+      
+      //updates the scoreboard after each round
+      winsDisplay.textContent = wins;
+      lossesDisplay.textContent = losses;
+      tiesDisplay.textContent = ties;
+      
+    };
+  </script>
+
+</body>
+
+</html>

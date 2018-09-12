@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(bananas.png);
+    font-family: 'Oswald', sans-serif;
+    font-size:18px;
+}
+
+.instructions{
+    width:80%;
+    background-color:#fff;
+    font-family: Helvetica;
+    color:#777;
+    text-align:center;
+    margin: 10px auto 0 auto;
+    padding: 20px;
+}
+
+.option{
+    font-size: 24px;
+    font-weight:bold;
+}
+
+.content-area {
+    width:80%;
+    background-color:#fffb90;
+    font-size:36px;
+    text-align:center;
+    margin:10px auto 75px auto;
+    padding: 25px;
+    opacity: 0.7;
+}
+
+.play-area{
+    border-bottom: 2px solid red;
+}
+
+.display{
+    font-weight:bold;
+    font-size:40px;
+}
