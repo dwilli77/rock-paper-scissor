@@ -9,3 +9,5 @@ Play Rocks, Paper, Scissors with the computer using your keyboard.
 Simply enter 'r', 'p', or 's' to make your selection.
 
 This is implemented using Vanilla Javascript
+
+![screenshot](./screenshot.PNG "Rock Paper Scissor")
